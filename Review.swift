@@ -9,7 +9,7 @@ import Vapor
 import SwiftLintFramework
 
 class Review {
-                func runReview(project: LicoreProject, repository: Repository, pullRequest: PullRequest, req: Request) {
+    func runReview(project: LicoreProject, repository: Repository, pullRequest: PullRequest, req: Request) {
         logger.info("Review process started...")
         
         let shortHash = String(pullRequest.latestCommit.prefix(8))
@@ -23,9 +23,12 @@ class Review {
         logger.info("Deleting older Comments...")
         project.sourceControlService(req: req).map { sourceControlService in
             
-            guard let sourceControlService = sourceControlService else {
+                    guard let sourceControlService = sourceControlService else {
                 logger.error("Source Control Service could not be loaded!")
                 return
+                        
+                        
+                        
             }
             
             sourceControlService.deleteAllComments(repositoryName: repository.name, pullRequestId: pullRequest.scmId, req: req)
