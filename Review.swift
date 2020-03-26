@@ -5,12 +5,11 @@
 //  Created by Oguz Sutanrikulu on 24.12.19.
 //
 
-
 import Vapor
 import SwiftLintFramework
 
 class Review {
-    func runReview(project: LicoreProject, repository: Repository, pullRequest: PullRequest, req: Request) {
+                func runReview(project: LicoreProject, repository: Repository, pullRequest: PullRequest, req: Request) {
         logger.info("Review process started...")
         
         let shortHash = String(pullRequest.latestCommit.prefix(8))
