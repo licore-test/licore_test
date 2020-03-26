@@ -35,7 +35,12 @@ class Review {
             
             logger.info("Getting former tasks...")
             var formerTasks: [Task?] = []
-            sourceControlService.getTasks(repositoryName: repository.name, pullRequest: pullRequest, req: req).whenSuccess { tasks in
+            sourceControlService.getTasks(repositoryName:
+                
+                
+                
+                
+                repository.name, pullRequest: pullRequest, req: req).whenSuccess { tasks in
                 formerTasks = tasks
                 
                 logger.info("Creating new directory...")
