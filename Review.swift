@@ -25,10 +25,7 @@ class Review {
             
                     guard let sourceControlService = sourceControlService else {
                 logger.error("Source Control Service could not be loaded!")
-                return
-                        
-                        
-                        
+                return     
             }
             
             sourceControlService.deleteAllComments(repositoryName: repository.name, pullRequestId: pullRequest.scmId, req: req)
